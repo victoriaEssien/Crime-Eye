@@ -62,10 +62,10 @@ body {
     font-size: 1rem;
     max-width: 530px;
     line-height: 1.6;
-    color: hsl(138, 40%, 29%);
+    color: #2c683e;
 }
 
-.btn-container {
+.hero-cta {
     margin-top: 30px;
 }
 
@@ -101,4 +101,66 @@ body {
 section {
     padding: 70px 60px;
     margin-top: 40px;
+}
+
+/* Auth Forms */
+
+.form-container {
+    border: none;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 5% auto;
+    width: 50%;
+    box-shadow: rgba(58, 138, 93, 0.15) 0px 48px 100px 0px;
+}
+
+.input {
+    margin-bottom: 5%;
+    font-size: 1rem;
+    resize: none;
+}
+
+.pass-input {
+    margin-bottom: 0;
+    font-size: 1rem;
+    resize: none;
+}
+
+.input:focus, .pass-input:focus {
+    box-shadow: none;
+    border: 3px solid hsl(139, 32%, 80%)
+}
+
+.form-text {
+    margin-bottom: 5%;
+}
+
+.auth-btn {
+    background-color: #1F8A3F;
+    text-decoration: none;
+    padding: 12px 40px;
+    margin: 5% 0;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+}
+
+.auth-btn:hover {
+    background-color: #449D5F;
+}
+
+.helper-text {
+    text-align: center;
+    color: #2c683e;
+}
+
+.helper-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #449D5F;
+}
+
+.helper-link:hover {
+    color: #449D5F;
 }
