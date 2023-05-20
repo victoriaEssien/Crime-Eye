@@ -1,5 +1,4 @@
 
-import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -21,7 +20,7 @@ function NavBar() {
             </Nav>
             <Nav className='ms-auto links'>
                 <Link to="/register">
-                    <Button type="button" className='nav-btn'>Get Started</Button>
+                    <button type="button" className='nav-btn'>Get Started</button>
                 </Link>
             </Nav>
         </Navbar.Collapse>

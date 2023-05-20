@@ -7,6 +7,10 @@ body {
     color: #9E1218;
 }
 
+.error {
+    color: #cc0000;
+}
+
 /* Navigation Bar and Hero Section*/
 
 .logo {
@@ -90,6 +94,7 @@ body {
 
 .nav-btn:hover, .primary-btn:hover, .secondary-btn:hover {
     background-color: #449D5F;
+    color: #fff;
 }
 
 .hero-img {

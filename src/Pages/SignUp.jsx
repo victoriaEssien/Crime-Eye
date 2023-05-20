@@ -1,5 +1,6 @@
 
-import { useState } from "react"
+import supabase from "../Client";
+import { useEffect, useState } from "react"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
@@ -10,31 +11,99 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 function SignUp() {
 
-    // const [formError, setFormError] = useState(null)
+    // let navigate = useNavigate()
 
+    const [formError, setFormError] = useState(null)
+  
+    const [formData, setFormData] = useState({
+      fullName: '',email: '',password: ''
+    })
+  
     const [passwordVisible, setPasswordVisible] = useState(false)
+
+    useEffect(() => {
+        let timer
+        if(formError) {
+          timer = setTimeout(() => {
+            setFormError(null)
+          }, 3000)
+        }
+        return() => {
+          clearTimeout(timer)
+        }
+      }, [formError])
+    
+      function handleChange(event){
+        setFormData((prevFormData)=>{
+          return{
+            ...prevFormData,
+            [event.target.name]:event.target.value
+          }
+    
+        })
+    
+    }
+
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        
+        let isFormEmpty = false
+        for(const field in formData) {
+          if (!formData[field]) {
+            isFormEmpty = true
+            break;
+          }
+        }
+        if (isFormEmpty) {
+          setFormError('Please fill in all fields')
+        } else {
+          try {
+            const { data, error } = await supabase.auth.signUp(
+              {
+                email: formData.email,
+                password: formData.password,
+                options: {
+                  data: {
+                    full_name: formData.fullName,
+                  }
+                }
+              }
+            )
+            if (error) throw error
+            // navigate('/verify', {replace: true})
+            console.log("Success");
+        
+          } catch(error) {
+            setFormError("Password is too short")
+          }
+        }
+      
+      }
 
 
     function handlePasswordVisibility() {
         setPasswordVisible(!passwordVisible)
     }
 
+
   return (
     <div className="form-container">
         <Form>
+            {formError && <p className="error">{formError}</p>}
             <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Full Name</Form.Label>
-                <Form.Control className="input" type="text" size='lg' placeholder="Enter your full name" required/>
+                <Form.Control className="input" type="text" name="fullName" onChange={handleChange} size='lg' placeholder="Enter your full name" required/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control className="input" type="email" size='lg' placeholder="Enter email" required/>
+                <Form.Control className="input" type="email" name="email" onChange={handleChange} size='lg' placeholder="someone@gmail.com" required/>
             </Form.Group>
 
             <Form.Label htmlFor="pass">Password</Form.Label>
             <InputGroup className="mb-3" size="lg">
-            <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} name="password" size="lg" required/>
+            <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} name="password" onChange={handleChange} size="lg" required/>
             <InputGroup.Text>
               <FontAwesomeIcon className="password-icon" onClick={handlePasswordVisibility} icon={passwordVisible ? faEyeSlash : faEye} />
             </InputGroup.Text>
@@ -45,7 +114,7 @@ function SignUp() {
             </Form.Text>
 
             <div className='d-grid'>
-                <Button type='submit' className="auth-btn">Create Account</Button>
+                <button type='submit' className="auth-btn" onClick={handleSubmit}>Create Account</button>
             </div>
             <p className="helper-text">Already have an account? <Link className="helper-link" to="/login">Log in</Link></p>
         </Form>

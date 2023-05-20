@@ -8,14 +8,18 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
+
 function Login() {
 
-    const [passwordVisible, setPasswordVisible] = useState(false)
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  const [passwordVisible, setPasswordVisible] = useState(false)
 
 
-    function handlePasswordVisibility() {
-        setPasswordVisible(!passwordVisible)
-    }
+  function handlePasswordVisibility() {
+    setPasswordVisible(!passwordVisible)
+  }
+
 
   return (
     <div className='form-container'>
@@ -27,7 +31,7 @@ function Login() {
 
             <Form.Label htmlFor="pass">Password</Form.Label>
             <InputGroup className="mb-3" size="lg">
-            <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} name="password" size="lg" required/>
+            <Form.Control id="pass" className="pass-input" type={passwordVisible ? "text" : "password"} size="lg" required/>
             <InputGroup.Text>
               <FontAwesomeIcon className="password-icon" onClick={handlePasswordVisibility} icon={passwordVisible ? faEyeSlash : faEye} />
             </InputGroup.Text>

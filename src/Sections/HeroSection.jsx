@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Button from 'react-bootstrap/Button';
 
 // Components
 
@@ -21,10 +20,10 @@ function HeroSection() {
                     <p className="hero-subheader">Crime Eye helps users to stay one step ahead of scammers by providing an easy-to-use platform for learning about their latest tricks and reporting to the authorities.</p>
                     <div className="hero-cta">
                         <Link to="/register" className='navigation-link'>
-                        <Button className="primary-btn">Get Started</Button>
+                        <button className="primary-btn">Get Started</button>
                         </Link>
                         <Link to="/login" className='navigation-link'>
-                        <Button className="secondary-btn">Log in</Button>
+                        <button className="secondary-btn">Log in</button>
                         </Link>
                     </div>
                 </Col>
