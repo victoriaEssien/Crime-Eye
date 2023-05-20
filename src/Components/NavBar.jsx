@@ -21,7 +21,7 @@ function NavBar() {
             </Nav>
             <Nav className='ms-auto links'>
                 <Link to="/register">
-                    <Button>Get Started</Button>
+                    <Button type="button" className='nav-btn'>Get Started</Button>
                 </Link>
             </Nav>
         </Navbar.Collapse>
