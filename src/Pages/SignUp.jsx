@@ -1,9 +1,8 @@
 
 import supabase from "../Client";
 import { useEffect, useState } from "react"
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -20,6 +19,7 @@ function SignUp() {
     })
   
     const [passwordVisible, setPasswordVisible] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         let timer
@@ -59,6 +59,7 @@ function SignUp() {
           setFormError('Please fill in all fields')
         } else {
           try {
+            setIsLoading(true)
             const { data, error } = await supabase.auth.signUp(
               {
                 email: formData.email,
@@ -70,12 +71,14 @@ function SignUp() {
                 }
               }
             )
+            setIsLoading(false)
             if (error) throw error
             // navigate('/verify', {replace: true})
             console.log("Success");
         
           } catch(error) {
             setFormError("Password is too short")
+            setIsLoading(false)
           }
         }
       
@@ -114,7 +117,9 @@ function SignUp() {
             </Form.Text>
 
             <div className='d-grid'>
-                <button type='submit' className="auth-btn" onClick={handleSubmit}>Create Account</button>
+                <button type='submit' className="auth-btn" onClick={handleSubmit} disabled={isLoading}>
+                  {isLoading ? 'Loading...' : 'Create Account'}
+                </button>
             </div>
             <p className="helper-text">Already have an account? <Link className="helper-link" to="/login">Log in</Link></p>
         </Form>
