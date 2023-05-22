@@ -10,6 +10,7 @@ function HomePage({token}) {
         sessionStorage.removeItem('token')
         navigate('/login')
     }
+    
   return (
     <div>
         <h1>Welcome, {token.user.user_metadata.full_name}</h1>

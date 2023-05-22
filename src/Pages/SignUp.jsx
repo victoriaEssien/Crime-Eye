@@ -60,6 +60,7 @@ function SignUp() {
         } else {
           try {
             setIsLoading(true)
+            // eslint-disable-next-line no-unused-vars
             const { data, error } = await supabase.auth.signUp(
               {
                 email: formData.email,
