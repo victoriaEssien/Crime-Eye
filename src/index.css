@@ -167,3 +167,31 @@ section {
 .helper-link:hover {
     color: #449D5F;
 }
+
+/* Email verification */
+
+.email-div {
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 40px 60px;
+    margin: 5% auto 0;
+    width: 50%;
+    box-shadow: rgba(58, 138, 93, 0.15) 0px 48px 100px 0px;
+}
+
+.email-pic {
+    width: 40%;
+}
+
+.email-subheader {
+    font-size: 1rem;
+    margin: 2% auto 0;
+    width: 65%;
+    line-height: 1.6;
+    color: #3e506f;
+}
+
+.email-stress {
+    font-weight: 600;
+}

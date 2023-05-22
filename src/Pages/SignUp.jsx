@@ -1,7 +1,7 @@
 
 import supabase from "../Client";
 import { useEffect, useState } from "react"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -10,7 +10,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 function SignUp() {
 
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
 
     const [formError, setFormError] = useState(null)
   
@@ -73,8 +73,7 @@ function SignUp() {
             )
             setIsLoading(false)
             if (error) throw error
-            // navigate('/verify', {replace: true})
-            console.log("Success");
+            navigate('/verify', {replace: true})
         
           } catch(error) {
             setFormError("Password is too short")

@@ -11,7 +11,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 function Login({setToken}) {
 
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
   const [formError, setFormError] = useState(null)
   const [authError, setAuthError] = useState(null)
   const [passwordVisible, setPasswordVisible] = useState(false)
@@ -69,7 +69,7 @@ function Login({setToken}) {
         if (error) throw error
         console.log(data)
         setToken(data)
-        // navigate('/register')
+        navigate('/home')
     
       } catch(error) {
         setAuthError("Invalid login details")
