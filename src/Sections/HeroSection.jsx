@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import HeroImg from "../assets/hero-img.png"
 
 // Components
 
@@ -29,7 +30,7 @@ function HeroSection() {
                 </Col>
 
                 <Col md={6}>
-                    <img src="" alt="Hero image" className="hero-img"/>
+                    <img src={HeroImg} alt="Hero image" className="hero-img"/>
                 </Col>
             </Row>
         </Container>
