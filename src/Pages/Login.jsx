@@ -101,6 +101,8 @@ function Login({setToken}) {
             </InputGroup.Text>
             </InputGroup>
 
+            <Link className='helper-link'>Forgot password?</Link>
+
             <div className='d-grid'>
                 <button type='submit' className='auth-btn' onClick={handleSubmit} disabled={isLoading}>
                   {isLoading ? 'Loading...' : 'Login'}
