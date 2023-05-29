@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
-import { SignUp, Login, HeroSection, VerifyEmail, HomePage } from "./index"
+import { SignUp, Login, HeroSection, VerifyEmail, Dashboard } from "./index"
 
 function LandingPage() {
 
@@ -30,7 +30,7 @@ function LandingPage() {
                 </Route>
                 <Route path="/register" element={<SignUp />}/>
                 <Route path="/login" element={<Login setToken={setToken}/>} />
-                {token?<Route path="/home" element={<HomePage token={token}/>} />:""}
+                {token?<Route path="/home" element={<Dashboard token={token}/>} />:""}
                 <Route path="/verify" element={<VerifyEmail />} />
             </Routes>
         </div>

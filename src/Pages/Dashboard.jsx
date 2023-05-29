@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import AppNavBar from '../Components/AppNavBar';
 
-function HomePage({token}) {
+function Dashboard({token}) {
 
     let navigate = useNavigate()
 
@@ -23,4 +23,4 @@ function HomePage({token}) {
   )
 }
 
-export default HomePage
+export default Dashboard

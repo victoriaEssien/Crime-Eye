@@ -13,7 +13,7 @@ function AppNavBar({ onClick }) {
             <Navbar.Toggle className='menu' aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto links">
-            <Nav.Link href="#home" className='nav-links'>Home</Nav.Link>
+            <Nav.Link href="#home" className='nav-links'>Dashboard</Nav.Link>
             <Nav.Link href="#link" className='nav-links'>Report</Nav.Link>
             <Nav.Link href="#link" className='nav-links'>Track Case</Nav.Link>
             <Nav.Link href="#link" className='nav-links'>Games</Nav.Link>
