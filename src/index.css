@@ -48,6 +48,11 @@ body {
     color: #fff;
 }
 
+.log-out-link {
+    font-weight: 600;
+    color: #1F8A3F;
+    text-decoration: none;
+}
 
 .hero-container {
     margin-top: 4%;
@@ -64,7 +69,7 @@ body {
 .hero-subheader {
     margin-top: 20px;
     font-size: 1rem;
-    max-width: 530px;
+    max-width: 510px;
     line-height: 1.6;
     color: #194f7b;
 }
@@ -194,4 +199,13 @@ section {
 
 .email-stress {
     font-weight: 600;
+}
+
+/* Dashboard */
+
+.navigation-bar {
+    padding: 20px 25px;
+    background: #fff;
+    box-shadow: rgba(58, 138, 93, 0.15) 0px 2px 40px 0px;
+
 }

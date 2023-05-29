@@ -4,24 +4,22 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function AppNavBar({ onClick }) {
   return (
     <div>
-        <Navbar expand="lg" className="nav-bar">
+        <Navbar expand="lg" className="navigation-bar">
             <Container>
             <Navbar.Brand href="/" className='logo'>Crime Eye</Navbar.Brand>
             <Navbar.Toggle className='menu' aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto links">
             <Nav.Link href="#home" className='nav-links'>Home</Nav.Link>
-            <Nav.Link href="#link" className='nav-links'>About</Nav.Link>
-            <Nav.Link href="#link" className='nav-links'>User guide</Nav.Link>
-            <Nav.Link href="#link" className='nav-links'>Features</Nav.Link>
+            <Nav.Link href="#link" className='nav-links'>Report</Nav.Link>
+            <Nav.Link href="#link" className='nav-links'>Track Case</Nav.Link>
+            <Nav.Link href="#link" className='nav-links'>Games</Nav.Link>
             </Nav>
             <Nav className='ms-auto links'>
-                <Link to="/register">
-                    <button type="button" className='nav-btn'>Get Started</button>
-                </Link>
+            <Nav.Link as={Link} to="/login" onClick={onClick} className='log-out-link'>Log out</Nav.Link>
             </Nav>
         </Navbar.Collapse>
       </Container>
@@ -30,4 +28,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default AppNavBar

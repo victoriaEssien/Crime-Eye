@@ -2,6 +2,8 @@
 
 import { Link, useNavigate } from 'react-router-dom';
 
+import AppNavBar from '../Components/AppNavBar';
+
 function HomePage({token}) {
 
     let navigate = useNavigate()
@@ -13,8 +15,8 @@ function HomePage({token}) {
     
   return (
     <div>
+      <AppNavBar onClick={handleLogOut}/>
         <h1>Welcome, {token.user.user_metadata.full_name}</h1>
-        <Link as={Link} to="/login" onClick={handleLogOut} className='log-in-link'>Log out</Link>
     </div>
   )
 }
