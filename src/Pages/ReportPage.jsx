@@ -71,6 +71,7 @@ function ReportPage() {
             {formError && <p className="error">{formError}</p>}
             {currentStep === 1 && (
                 <div>
+                    <h3>User Details:</h3>
                     <Form.Group className="mb-3">
                     <Form.Label>Project Title</Form.Label>
                     <Form.Control className="input" type="text" value={title} size="lg" placeholder="ex. Hospital Management System" onChange={(e) => setTitle(e.target.value)} required/>
@@ -81,6 +82,7 @@ function ReportPage() {
 
             {currentStep === 2 && (
                 <div>
+                    <h3>Incident Details:</h3>
                     <Form.Group className="mb-3">
                     <Form.Label>Project Description (minimum 20 words)</Form.Label>
                     <Form.Control className="input" as="textarea" rows={3} type="text" value={description} size="lg" placeholder="Tell us what your project is about and what it does" onChange={(e) => setDescription(e.target.value)} required/>
@@ -91,6 +93,7 @@ function ReportPage() {
 
             {currentStep === 3 && (
                 <div>
+                <h3>Suspect(s) Information:</h3>
                     <Form.Select size="lg" name="category" className="input" id="Category" onChange={(e) => setCategory(e.target.value)} required>
                     <option value="">Select a category</option>
                     <option value="Web Development">Web Development</option>
