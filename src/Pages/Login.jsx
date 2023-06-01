@@ -1,5 +1,5 @@
 
-import supabase from '../Client';
+import supabase from '../client';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
