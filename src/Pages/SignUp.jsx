@@ -68,6 +68,7 @@ function SignUp() {
                 options: {
                   data: {
                     full_name: formData.fullName,
+                    points: 0,
                   }
                 }
               }
