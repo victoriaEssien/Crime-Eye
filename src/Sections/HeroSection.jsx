@@ -18,7 +18,7 @@ function HeroSection() {
             <Row>
                 <Col>
                     <h1 className="hero-header">Equipping users to <span className="red">outsmart scammers</span></h1>
-                    <p className="hero-subheader">Crime Eye helps users to stay one step ahead of scammers by providing an easy-to-use platform for learning about their latest tricks and reporting to the authorities.</p>
+                    <p className="hero-subheader">Crime Eye helps users to stay one step ahead of scammers by providing an easy-to-use platform for learning about their latest tricks.</p>
                     <div className="hero-cta">
                         <Link to="/register" className='navigation-link'>
                         <button className="primary-btn">Get Started</button>
