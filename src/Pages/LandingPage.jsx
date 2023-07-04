@@ -32,7 +32,8 @@ function LandingPage() {
                 <Route path="/login" element={<Login setToken={setToken}/>} />
                 {token?<Route path="/home" element={<Dashboard token={token}/>} />:""}
                 <Route path="/verify" element={<VerifyEmail />} />
-                {token?<Route path="/phishing-one" element={<Phishing token={token}/>} />:""}
+                <Route path="/phishing" element={<Phishing />} />
+                {/* {token?<Route path="/phishing-one" element={<Phishing token={token}/>} />:""} */}
             </Routes>
         </div>
     </Router>
