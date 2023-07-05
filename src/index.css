@@ -256,6 +256,22 @@ section {
     gap: 40px 40px;
 }
 
+.level-card {
+    background-color: hsl(0, 0%, 90%);
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 40px 40px;
+}
+
+
 /* quiz */
 
 .quiz-container {

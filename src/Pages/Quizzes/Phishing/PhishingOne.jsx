@@ -1,12 +1,12 @@
 
 
-import supabase from "../client"
+import supabase from "../../../client"
 import { useState } from "react"
 import { useNavigate } from "react-router"
-import { quiz } from "../Questions/phishing-questions/phishing"
+import { quiz } from "../../../Questions/phishing-questions/phishing"
 
 
-const Phishing = ({token}) => {
+const PhishingOne = ({token}) => {
     let navigate = useNavigate()
     const [activeQuestion, setActiveQuestion] = useState(0)
     const [selectedAnswer, setSelectedAnswer] = useState('')
@@ -17,6 +17,7 @@ const Phishing = ({token}) => {
       correctAnswers: 0,
       wrongAnswers: 0,
     })
+    // eslint-disable-next-line no-unused-vars
     const [updatedPoints, setUpdatedPoints] = useState(token.user.user_metadata.points)
 
     const { questions } = quiz
@@ -131,4 +132,4 @@ const Phishing = ({token}) => {
     )
   }
   
-  export default Phishing
+  export default PhishingOne

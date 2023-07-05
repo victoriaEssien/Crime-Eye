@@ -6,8 +6,8 @@ import HeroSection from "../Sections/HeroSection";
 import VerifyEmail from "./VerifyEmail";
 import Dashboard from "./Dashboard";
 import Phishing from "./Homeroom/Phishing";
-// import Phishing from "./Phishing";
+import PhishingOne from "./Quizzes/Phishing/PhishingOne";
 
 export {
-    SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing
+    SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing, PhishingOne
 }
