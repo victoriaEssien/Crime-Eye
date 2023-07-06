@@ -37,9 +37,9 @@ function Dashboard({token}) {
                 <QuizCard title="Phishing Scam" description="Phishing is a lorem ipsum dolor sit amet." destination="/phishing"/>
                 <QuizCard title="Identity Theft" description="Phishing is a lorem ipsum dolor sit amet."/>
                 <QuizCard title="Credit Card Fraud" description="Phishing is a lorem ipsum dolor sit amet."/>
-                <QuizCard title="Phishing Scam" description="Phishing is a lorem ipsum dolor sit amet."/>
-                <QuizCard title="Phishing Scam" description="Phishing is a lorem ipsum dolor sit amet."/>
-                <QuizCard title="Phishing Scam" description="Phishing is a lorem ipsum dolor sit amet."/>
+                <QuizCard title="Donation Scam" description="Phishing is a lorem ipsum dolor sit amet."/>
+                <QuizCard title="Investment Fraud" description="Phishing is a lorem ipsum dolor sit amet."/>
+                <QuizCard title="Romance Scam" description="Phishing is a lorem ipsum dolor sit amet."/>
               </div>
             </div>
           </section>
