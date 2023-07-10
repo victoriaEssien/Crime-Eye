@@ -11,7 +11,7 @@ function QuizCard({ title, description, destination }) {
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
         <Link to={destination}>
-          <Button type="button" variant="primary">Take quiz</Button>
+          <Button type="button" className='dash-btn'>Take quiz</Button>
         </Link>
       </Card.Body>
     </Card>

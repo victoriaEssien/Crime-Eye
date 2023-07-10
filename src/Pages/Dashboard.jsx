@@ -34,8 +34,7 @@ function Dashboard({token}) {
             </div>
             <div className='quizzes'>
               <div className='quiz-grid'>
-                <QuizCard title="Phishing Scam" description="Scammers pretend to be trusted organizations, send fake messages or create fake websites." destination="/phishing"/>
-                
+                <QuizCard title="Phishing Scam" description="Phishing is a lorem ipsum dolor sit amet." destination="/phishing"/>
                 <QuizCard title="Identity Theft" description="Phishing is a lorem ipsum dolor sit amet."/>
                 <QuizCard title="Credit Card Fraud" description="Phishing is a lorem ipsum dolor sit amet."/>
                 <QuizCard title="Donation Scam" description="Phishing is a lorem ipsum dolor sit amet."/>

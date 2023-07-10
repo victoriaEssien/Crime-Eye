@@ -233,6 +233,17 @@ section {
     margin-bottom: 1%;
 }
 
+.dash-btn {
+    background-color: #6699CC;
+    border: none;
+    padding: 8px 30px;
+    width: 100%;
+}
+
+.dash-btn:hover {
+    background-color: #4080bf;
+}
+
 .quiz-body {
     padding: 0;
     margin-bottom: 8%;
@@ -251,6 +262,7 @@ section {
 
 .div-link {
     text-decoration: none;
+    color: #4080bf;
 }
 
 .quiz-grid {
@@ -260,12 +272,15 @@ section {
 }
 
 .level-card {
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 92%);
     text-align: center;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 20px 30px;
+    width: 100%;
+    padding: 40px 50px;
     border-radius: 10px;
+}
+
+.level-card:hover {
+    background-color: hsl(0, 0%, 85%);
 }
 
 .levels-grid {
