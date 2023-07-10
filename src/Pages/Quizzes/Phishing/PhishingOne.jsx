@@ -11,6 +11,7 @@ const PhishingOne = ({token}) => {
     const [activeQuestion, setActiveQuestion] = useState(0)
     const [selectedAnswer, setSelectedAnswer] = useState('')
     const [showResult, setShowResult] = useState(false)
+    const [correctAnswers, setCorrectAnswers] = useState(0);
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null)
     const [result, setResult] = useState({
       score: 0,
@@ -24,66 +25,82 @@ const PhishingOne = ({token}) => {
     const { question, choices, correctAnswer } = questions[activeQuestion]
   
     const onClickNext = () => {
-      setSelectedAnswerIndex(null)
-      setResult((prev) =>
-        selectedAnswer
-          ? {
-              ...prev,
-              score: prev.score + 5,
-              correctAnswers: prev.correctAnswers + 1,
-            }
-          : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
-      )
+      setSelectedAnswerIndex(null);
+      setResult(prev => {
+        if (selectedAnswer && correctAnswers >= 7) {
+          return {
+            ...prev,
+            score: prev.score + 5,
+            correctAnswers: prev.correctAnswers + 1
+          };
+        } else {
+          return {
+            ...prev,
+            wrongAnswers: prev.wrongAnswers + 1
+          };
+        }
+      });
+    
       if (activeQuestion !== questions.length - 1) {
-        setActiveQuestion((prev) => prev + 1)
+        setActiveQuestion(prev => prev + 1);
       } else {
-        setActiveQuestion(0)
-        setShowResult(true)
+        setActiveQuestion(0);
+        setShowResult(true);
       }
-    }
+    };
+    
   
     const onAnswerSelected = (answer, index) => {
-      setSelectedAnswerIndex(index)
+      setSelectedAnswerIndex(index);
       if (answer === correctAnswer) {
-        setSelectedAnswer(true)
+        setSelectedAnswer(true);
+        setCorrectAnswers(prevCount => prevCount + 1);
       } else {
-        setSelectedAnswer(false)
+        setSelectedAnswer(false);
       }
-    }
+    };
+    
   
     const addLeadingZero = (number) => (number > 9 ? number : `0${number}`)
 
     async function handleIncrementPoints(e) {
-      e.preventDefault()
-      try {
-        const newPoints = token.user.user_metadata.points + 10;
+      e.preventDefault();
+      if (correctAnswers >= 7) {
+        try {
+          const newPoints = token.user.user_metadata.points + 10;
     
-        // Update the user metadata in Supabase
-        const { error } = await supabase.auth.updateUser({
-          data: { points: newPoints },
-        });
+          // Update the user metadata in Supabase
+          const { error } = await supabase.auth.updateUser({
+            data: { points: newPoints }
+          });
     
-        if (error) {
+          if (error) {
+            // Handle error
+            console.log(error);
+          } else {
+            // Update the state with the new points value
+            setUpdatedPoints(newPoints);
+    
+            // Update the user object with the new points value
+            const updatedUser = {
+              ...token.user,
+              user_metadata: { ...token.user.user_metadata, points: newPoints }
+            };
+    
+            // Update the token in session storage with the updated user object
+            const updatedToken = { ...token, user: updatedUser };
+            sessionStorage.setItem('token', JSON.stringify(updatedToken));
+            navigate('/home', { replace: true });
+          }
+        } catch (error) {
           // Handle error
           console.log(error);
-        } else {
-          // Update the state with the new points value
-          setUpdatedPoints(newPoints);
-    
-          // Update the user object with the new points value
-          const updatedUser = { ...token.user, user_metadata: { ...token.user.user_metadata, points: newPoints } };
-    
-          // Update the token in session storage with the updated user object
-          const updatedToken = { ...token, user: updatedUser };
-          sessionStorage.setItem('token', JSON.stringify(updatedToken));
-          navigate('/home', {replace: true})
-
         }
-      } catch (error) {
-        // Handle error
-        console.log(error);
+      } else {
+        navigate('/home', { replace: true });
       }
     }
+    
   
     return (
       <div className="quiz-container">
@@ -125,7 +142,7 @@ const PhishingOne = ({token}) => {
             <p>
               Wrong Answers:<span> {result.wrongAnswers}</span>
             </p>
-            <button type="submit" onClick={handleIncrementPoints}>Go home</button>
+            <button type="submit" className="quiz-btn" onClick={handleIncrementPoints}>Go home</button>
           </div>
         )}
       </div>

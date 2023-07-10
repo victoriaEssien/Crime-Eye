@@ -293,18 +293,19 @@ section {
 /* quiz */
 
 .quiz-container {
-    max-width: 500px;
+    margin: auto;
+    max-width: 800px;
     min-width: 250px;
     background: #ffffff;
     border-radius: 4px;
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 30px 60px;
   }
   
   .quiz-container .active-question-no {
     font-size: 32px;
     font-weight: 500;
-    color: #800080;
+    color: #132639;
   }
   
   .quiz-container .total-question {
@@ -316,7 +317,8 @@ section {
   .quiz-container h2 {
     font-size: 20px;
     font-weight: 500;
-    margin: 0;
+    margin-top: 3%;
+    line-height: 1.5;
   }
   
   .quiz-container ul {
@@ -327,24 +329,25 @@ section {
   .quiz-container ul li {
     text-decoration: none;
     list-style: none;
-    color: #2d264b;
+    color: #132639;
     font-size: 16px;
     background: #ffffff;
     border: 1px solid #eaeaea;
-    border-radius: 16px;
+    border-radius: 10px;
     padding: 11px;
     margin-top: 15px;
     cursor: pointer;
   }
   
   .quiz-container ul .selected-answer {
-    background: #ffd6ff;
-    border: 1px solid #800080;
+    background: hsl(120, 33%, 94%);
+    border: 1px solid #99CC99;
+    color: hsl(120, 33%, 45%);
   }
   
   .quiz-container button {
-    background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
-    border-radius: 9px;
+    background-color: #6699CC;
+    border-radius: 5px;
     font-size: 18px;
     color: #ffffff;
     padding: 10px 42px;
@@ -356,7 +359,7 @@ section {
   
   .quiz-container button:disabled {
     background: #e7e8e9;
-    color: #9fa3a9;
+    color: #cccccc;
     cursor: not-allowed;
   }
   
@@ -364,19 +367,25 @@ section {
     display: flex;
     justify-content: flex-end;
   }
+
+  .result {
+    text-align: center;
+  }
   
   .result h3 {
     font-size: 24px;
     letter-spacing: 1.4px;
     text-align: center;
+    color: #132639;
   }
   
   .result p {
+    margin-top: 5%;
     font-size: 16px;
     font-weight: 500;
   }
   
   .result p span {
-    color: #800080;
+    color: #6699CC;
     font-size: 22px;
   }
