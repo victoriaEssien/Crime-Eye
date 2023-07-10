@@ -17,11 +17,6 @@ function Phishing() {
             <LevelCard number="8"/>
             <LevelCard number="9"/>
             <LevelCard number="10"/>
-            <LevelCard number="11"/>
-            <LevelCard number="12"/>
-            <LevelCard number="13"/>
-            <LevelCard number="14"/>
-            <LevelCard number="15"/>
           </div>
         </div>
       </section>

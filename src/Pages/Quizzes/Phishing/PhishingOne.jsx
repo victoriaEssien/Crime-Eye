@@ -56,7 +56,7 @@ const PhishingOne = ({token}) => {
     async function handleIncrementPoints(e) {
       e.preventDefault()
       try {
-        const newPoints = token.user.user_metadata.points + 1;
+        const newPoints = token.user.user_metadata.points + 10;
     
         // Update the user metadata in Supabase
         const { error } = await supabase.auth.updateUser({

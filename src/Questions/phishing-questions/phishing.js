@@ -1,27 +1,73 @@
 export const quiz = {
-  topic: 'Javascript',
+  topic: 'Phishing',
   level: 'Beginner',
-  totalQuestions: 4,
-  perQuestionScore: 5,
+  totalQuestions: 10,
+  perQuestionScore: 1,
   questions: [
     {
-      question: 'Which function is used to serialize an object into a JSON string in Javascript?',
-      choices: ['stringify()', 'parse()', 'convert()', 'None of the above'],
+      question: 'You receive an email claiming to be from your bank, asking you to urgently update your account details or risk having your account suspended. What should you do?',
+      choices: ['Click the provided link and update your account information',
+      'Ignore the email and delete it',
+      'Reply to the email with your account details',
+      'Forward the email to all your contacts for awareness'
+      ],
       type: 'MCQs',
-      correctAnswer: 'stringify()',
+      correctAnswer: 'Ignore the email and delete it',
     },
     {
-      question: 'Which of the following keywords is used to define a variable in Javascript?',
-      choices: ['var', 'let', 'var and let', 'None of the above'],
+      question: 'You receive a text message informing you that you have won a lottery and need to provide your bank account details to claim the prize. What should you do?',
+      choices: ['Provide your bank account details as requested',
+      'Ignore the email and delete it',
+      'Report the message as spam and delete it',
+      'Share the message on social media to alert others',
+      'Reply with a request for more information'
+      ],
       type: 'MCQs',
-      correctAnswer: 'var and let',
+      correctAnswer: 'Report the message as spam and delete it',
     },
     {
-      question:
-        'Which of the following methods can be used to display data in some form using Javascript?',
-      choices: ['document.write()', 'console.log()', 'window.alert', 'All of the above'],
+      question: 'You receive an email claiming to be from a popular online shopping website, offering an exclusive discount on a product you recently searched for. The email asks you to click on a link to claim the discount. What should you do?',
+      choices: [
+        'Click the link and enter your payment information to avail the discount', 
+      'console.log()', 'window.alert', 'All of the above'],
       type: 'MCQs',
       correctAnswer: 'All of the above',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
+    },
+    {
+      question: 'How can a datatype be declared to be a constant type?',
+      choices: ['const', 'var', 'let', 'constant'],
+      type: 'MCQs',
+      correctAnswer: 'const',
     },
     {
       question: 'How can a datatype be declared to be a constant type?',
