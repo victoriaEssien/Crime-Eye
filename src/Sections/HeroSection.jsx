@@ -17,7 +17,7 @@ function HeroSection() {
       <Container fluid='md' className="hero-container">
             <Row>
                 <Col>
-                    <h1 className="hero-header">Equipping users to <span className="red">outsmart scammers</span></h1>
+                    <h1 className="hero-header"><span className="pink">Empower yourself</span> against financial fraud</h1>
                     <p className="hero-subheader">Crime Eye helps users to stay one step ahead of scammers by providing an easy-to-use platform for learning about their latest tricks.</p>
                     <div className="hero-cta">
                         <Link to="/register" className='navigation-link'>
