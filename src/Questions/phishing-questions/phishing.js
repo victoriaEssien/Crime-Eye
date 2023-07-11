@@ -17,7 +17,6 @@ export const quiz = {
     {
       question: 'You receive a text message informing you that you have won a lottery and need to provide your bank account details to claim the prize. What should you do?',
       choices: ['Provide your bank account details as requested',
-      'Ignore the email and delete it',
       'Report the message as spam and delete it',
       'Share the message on social media to alert others',
       'Reply with a request for more information'

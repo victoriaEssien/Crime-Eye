@@ -1,5 +1,3 @@
-
-
 import supabase from "../../../client"
 import { useState } from "react"
 import { useNavigate } from "react-router"
@@ -20,7 +18,7 @@ const PhishingOne = ({token}) => {
     })
     // eslint-disable-next-line no-unused-vars
     const [updatedPoints, setUpdatedPoints] = useState(token.user.user_metadata.points)
-
+    const [isLoading, setIsLoading] = useState(false)
     const { questions } = quiz
     const { question, choices, correctAnswer } = questions[activeQuestion]
   
@@ -66,6 +64,7 @@ const PhishingOne = ({token}) => {
     async function handleIncrementPoints(e) {
       e.preventDefault();
       if (correctAnswers >= 7) {
+        setIsLoading(true)
         try {
           const newPoints = token.user.user_metadata.points + 10;
     
@@ -95,6 +94,7 @@ const PhishingOne = ({token}) => {
         } catch (error) {
           // Handle error
           console.log(error);
+          setIsLoading(false)
         }
       } else {
         navigate('/home', { replace: true });
@@ -142,7 +142,9 @@ const PhishingOne = ({token}) => {
             <p>
               Wrong Answers:<span> {result.wrongAnswers}</span>
             </p>
-            <button type="submit" className="quiz-btn" onClick={handleIncrementPoints}>Go home</button>
+            <button type="submit" className="quiz-btn" onClick={handleIncrementPoints} disabled={isLoading}>
+              {isLoading ? "Loading..." : "Go home"}
+            </button>
           </div>
         )}
       </div>
