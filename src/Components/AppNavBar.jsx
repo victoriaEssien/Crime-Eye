@@ -14,7 +14,6 @@ function AppNavBar({ onClick }) {
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto links">
             <Nav.Link href="/home" className='nav-links'>Dashboard</Nav.Link>
-            <Nav.Link href="#link" className='nav-links'>Rooms</Nav.Link>
             <Nav.Link href="/store" className='nav-links'>Store</Nav.Link>
             </Nav>
             <Nav className='ms-auto links'>

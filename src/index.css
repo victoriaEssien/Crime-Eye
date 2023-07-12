@@ -404,3 +404,15 @@ section {
     color: hsl(120, 33%, 40%);
     font-weight: 500;
 }
+
+.money-div {
+    text-align: center;
+}
+
+.email-subheader {
+    font-size: 1rem;
+    margin: 2% auto 0;
+    width: 65%;
+    line-height: 1.6;
+    color: #3e506f;
+}

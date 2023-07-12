@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router';
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import noMoney from "../assets/no-money.png";
+
 function OrderForm({ token }) {
   let location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -86,8 +88,10 @@ function OrderForm({ token }) {
   return (
     <div className="form-container">
       {insufficientFunds && (
-        <div>
-          <p>Insufficient funds. Please add more points to your account.</p>
+        <div className='money-div'>
+          <img src={noMoney} alt="Girl stressing because there's no money" className='email-pic' style={{marginBottom: "5%"}}/>
+          <h4 className='money-header'>Insufficient funds</h4>
+          <p className='money-subheader'>Please add more points to your account</p>
           <Button
             className="dash-btn"
             onClick={() => navigate('/home')}
@@ -102,6 +106,8 @@ function OrderForm({ token }) {
             <Form.Label>Shipping Address</Form.Label>
             <Form.Control
               type="text"
+              size='lg'
+              className='input'
               value={shippingAddress}
               onChange={(e) => setShippingAddress(e.target.value)}
               required
@@ -111,6 +117,8 @@ function OrderForm({ token }) {
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               type="tel"
+              size='lg'
+              className='input'
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
@@ -120,6 +128,8 @@ function OrderForm({ token }) {
             <Form.Label>Size</Form.Label>
             <Form.Control
               type="text"
+              size='lg'
+              className='input'
               value={size}
               onChange={(e) => setSize(e.target.value)}
               required
@@ -137,7 +147,7 @@ function OrderForm({ token }) {
           <Button
             type="submit"
             className="dash-btn"
-            style={{ marginTop: '10%' }}
+            style={{ marginTop: '5%', padding: '12px 0'}}
           >
             Submit
           </Button>
