@@ -7,8 +7,9 @@ import VerifyEmail from "./VerifyEmail";
 import Dashboard from "./Dashboard";
 import Phishing from "./Homeroom/Phishing";
 import PhishingOne from "./Quizzes/Phishing/PhishingOne";
-import Leaderboard from "./Leaderboard";
+import Store from "./Store";
+import OrderForm from "./OrderForm";
 
 export {
-    SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing, PhishingOne, Leaderboard
+    SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing, PhishingOne, Store, OrderForm
 }

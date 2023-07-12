@@ -389,3 +389,18 @@ section {
     color: #6699CC;
     font-size: 22px;
   }
+
+.product-card {
+    padding: 5% 0;
+}
+
+.product-card-image {
+    margin: auto;
+    object-fit: cover;
+    width: 70%;
+}
+
+.product-card-price {
+    color: hsl(120, 33%, 40%);
+    font-weight: 500;
+}

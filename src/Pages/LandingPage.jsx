@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react"
-import { SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing, PhishingOne, Leaderboard } from "./index"
+import { SignUp, Login, HeroSection, VerifyEmail, Dashboard, Phishing, PhishingOne, Store, OrderForm } from "./index"
 
 function LandingPage() {
 
@@ -34,7 +34,8 @@ function LandingPage() {
                 <Route path="/verify" element={<VerifyEmail />} />
                 <Route path="/phishing" element={<Phishing />} />
                 {token?<Route path="/phishing-one" element={<PhishingOne token={token}/>} />:""}
-                <Route path="/leaderboard" element={<Leaderboard />} />
+                {token?<Route path="/store" element={<Store token={token}/>} />:""}
+                {token?<Route path="/order" element={<OrderForm token={token}/>} />:""}
 
             </Routes>
         </div>
